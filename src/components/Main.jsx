@@ -1,6 +1,6 @@
 import React from "react";
 import "../Css/Main.css";
-import Animation from "./animation";
+import Animation from "../components/animation";
 
 export default function Main() {
   return (
