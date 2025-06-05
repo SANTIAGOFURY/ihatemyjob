@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem; /* match your fixed header height */
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+}
+/* =================================================== */
+/* ========== 🖱️ CUSTOM SCROLLBAR STYLES ============ */
+/* =================================================== */
+/* 🧙 Scrollbar Magic - Chrome, Edge, Safari only */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  z-index: 467;
+}
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar-track {
+  background: var(--background-color); /* Scroll track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--btn-primary-hover); /* Scroll thumb */
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px var(--box-shadow-dark);
+  transition: 300ms;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent); /* Thumb on hover */
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: var(--color-button-bg);
+}
+
+:root {
+  /* ===== Primary Palette ===== */
+  --primary-color: #6a1b9a;
+  --primary-color-light: #9c27b0;
+  --primary-color-dark: #4a148c;
+
+  /* ===== Accent & Backgrounds ===== */
+  --accent-color: #7b1fa2;
+  --background-color: #1e1b29;
+  --white: #ffffff;
+  --black: #000000;
+
+  /* ===== Borders ===== */
+  --border-color: #45224a;
+  --border-dark: #6a1b9a;
+
+  /* ===== Header ===== */
+  --header-bg: #311b3f;
+  --header-text: #ffffff;
+
+  /* ===== Footer ===== */
+  --footer-bg: #24002e;
+  --footer-text: #d1c4e9;
+  --footer-link: #ba68c8;
+  --footer-link-hover: #e1bee7;
+
+  /* ===== Aside / Sidebar ===== */
+  --aside-bg: #2a1a37;
+  --aside-border: #4a148c;
+
+  /* ===== Main Content ===== */
+  --main-bg: #2e223f;
+  --main-text: #f3e5f5;
+
+  /* ===== Headings ===== */
+  --h1-color: #ce93d8;
+  --heading-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+
+  /* ===== Logo ===== */
+  --logo-bg: #7b1fa2;
+  --logo-text: #ffffff;
+  --logo-shadow: 0 2px 6px rgba(156, 39, 176, 0.4);
+
+  /* ===== Text Variants ===== */
+  --text-color: #ede7f6;
+  --text-light: #ffffff;
+  --text-muted: #b39ddb;
+  --text-dark: #4a148c;
+  --text-success: #8e24aa;
+  --text-error: #d32f2f;
+
+  /* ===== Buttons ===== */
+  --btn-bg: var(--primary-color);
+  --btn-bg-hover: var(--primary-color-dark);
+  --btn-text: var(--text-light);
+
+  /* ===== Icons ===== */
+  --icon-color: #ce93d8;
+  --icon-hover: #e1bee7;
+
+  /* ===== Blobs & Shapes ===== */
+  --blob-purple: #7b1fa2;
+  --blob-dark: #4a148c;
+  --shape-bg: #6a1b9a;
+  --shape-accent: #ba68c8;
+
+  /* ===== Waves (SVG section dividers) ===== */
+  --wave-color: #2a1a37;
+  --wave-dark: #4a148c;
+  --wave-accent: #6a1b9a;
+
+  /* ===== Shadows ===== */
+  --box-shadow-light: 0 2px 6px rgba(106, 27, 154, 0.1);
+  --box-shadow: 0 4px 12px rgba(106, 27, 154, 0.3);
+  --box-shadow-strong: 0 6px 20px rgba(74, 20, 140, 0.45);
+
+  /* ===== Scrollbar Colors ===== */
+  --scrollbar-track: #2e223f;
+  --scrollbar-thumb: #6a1b9a;
+  --scrollbar-thumb-hover: #9c27b0;
+  --scrollbar-thumb-active: #4a148c;
+  --scrollbar-border: #7b1fa2;
+
+  /* ===== Header Nav Links ===== */
+  --nav-link-color: #ce93d8;
+  --nav-link-hover: #ffffff;
+  --nav-link-active: #e1bee7;
+  --nav-link-bg-hover: rgba(255, 255, 255, 0.1);
+
+  /* ===== Buttons: Primary ===== */
+  --btn-primary-bg: #6a1b9a;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #7b1fa2;
+  --btn-primary-active: #4a148c;
+  --btn-primary-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
+
+  /* ===== Buttons: Secondary ===== */
+  --btn-secondary-bg: #45224a;
+  --btn-secondary-text: #e1bee7;
+  --btn-secondary-hover: #5e3371;
+  --btn-secondary-active: #311b3f;
+
+  /* ===== Buttons: Outline ===== */
+  --btn-outline-border: #ce93d8;
+  --btn-outline-text: #ce93d8;
+  --btn-outline-hover-bg: rgba(206, 147, 216, 0.1);
+  --btn-outline-hover-border: #e1bee7;
+  --btn-outline-hover-text: #ffffff;
+
+  /* ===== Buttons: Disabled ===== */
+  --btn-disabled-bg: #3d2c4a;
+  --btn-disabled-text: #b39ddb;
+  --btn-disabled-border: #5c3e6a;
+}
+body {
+  background-color: var(--background-color);
+}
+header {
+  width: 100%;
+  background-color: var(--header-bg);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: 200ms;
+  z-index: 45678;
+}
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: 300ms;
+}
+header .header-left {
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: 300ms;
+}
+header .header-left .logo span {
+  color: var(--icon-color);
+  font-size: 2.5rem;
+}
+header .header-left h2 {
+  color: var(--header-text);
+  height: 10rem;
+  line-height: 10rem;
+  transition: 300ms;
+}
+header .header-left h2 .dot {
+  color: var(--header-text);
+}
+header .header-left h2 span {
+  color: var(--text-muted);
+}
+header .header-center {
+  display: flex;
+  align-items: center;
+  width: 40rem;
+}
+header .header-center ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+}
+header .header-center ul li {
+  position: relative;
+}
+header .header-center ul li a {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+header .header-center ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--border-color);
+  position: absolute;
+  transition: 300ms;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+}
+header .header-center ul li a:hover::after {
+  width: 100%;
+}
+header .header-right {
+  display: flex;
+  width: 15rem;
+  align-items: center;  
+}
+header .header-right button {
+  background-color: var(--btn-bg);
+  border: none;
+  width: 4.5rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+header .header-right button:hover {
+  background-color: var(--btn-secondary-hover);
+}
+header .header-right button:active {
+  border: 3px solid var(--text-light);
+}
+header aside {
+  width: 100%;
+  flex: none;
+  position: absolute;
+  height: 3rem;
+  background-color: var(--aside-bg);
+  left: 0;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+header aside div {
+  position: relative;
+}
+
+header aside div a span {
+  margin-left: 0.5rem;
+}
+header aside div a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--text-success);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+header aside div a span {
+  color: var(--text-color);
+}
+header aside div a::after {
+  content: "";
+  width: 0%;
+  height: 1.5px;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+  background-color: var(--text-muted);
+}
+header aside div a:hover::after {
+  width: 100%;
+}
+
+header.scrolled {
+  box-shadow: 0 5px 20px 0.1px var(--box-shadow-light);
+  background-color: var(--aside-border); /* fallback color */
+  backdrop-filter: blur(20px);
+}
+header.scrolled .header-left h2 {
+  height: 80px;
+  line-height: 80px;
+}

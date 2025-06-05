@@ -1,0 +1,182 @@
+:root {
+  --header-bg: #2d1e40;
+  --header-text: #e0d7ff;
+  --header-hover: #a678f2;
+  --header-active: #7b4de5;
+  --header-border: #443366;
+  --header-icon: #c3b3ff;
+  --header-icon-hover: #dabfff;
+  --logo-icon: #b889f9;
+  --title-color: #f1e7ff;
+  --btn-bg: #7b4de5;
+  --btn-text: #ffffff;
+  --btn-hover: #a678f2;
+  --btn-active: #5f36c7;
+  --btn-disabled-bg: #5a4c70;
+  --btn-disabled-text: #ccc;
+  --btn-shadow: rgba(165, 120, 242, 0.4);
+}
+header {
+  width: 100%;
+  background-color: var(--header-bg);
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0 2px 16px 0 var(--btn-shadow); /* Add this line */
+  z-index: 100;
+}
+
+header .header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 15rem;
+}
+header .header-left .logo span {
+  color: var(--logo-icon);
+  font-size: 2.5rem;
+}
+header .header-left h2 {
+  color: var(--header-text);
+  font-size: 1.3rem;
+  height: 10rem;
+  line-height: 10rem;
+}
+header .header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40rem;
+}
+header .header-center nav {
+  width: 100%;
+}
+header .header-center nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-center nav ul li a {
+  color: var(--header-text);
+  text-decoration: none;
+  font-size: 1rem;
+}
+header .header-right {
+  display: flex;
+  width: 22rem;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-right button {
+  width: 5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--btn-bg);
+  color: var(--header-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header-right .btn {
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+header .header-right button:hover {
+  background-color: var(--btn-hover);
+}
+header .header-left h2 {
+  transition: height 0.3s, line-height 0.3s;
+}
+
+header.scrolled .header-left h2 {
+  height: 80px;
+  line-height: 80px;
+}
+
+header.scrolled {
+  box-shadow: 0 4px 24px 0 var(--btn-shadow); /* Stronger shadow when scrolled */
+}
+
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0.5rem;
+  }
+  .header-left,
+  .header-center,
+  .header-right {
+    width: 100%;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+  .header-center nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .header-right {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+  header .header-left h2 {
+    font-size: 1rem;
+    height: auto;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 0.5rem 0.2rem;
+  }
+  .header-left .logo span {
+    font-size: 1.5rem;
+  }
+  .header-left h2 {
+    font-size: 0.9rem;
+  }
+  .header-center nav ul li a {
+    font-size: 0.9rem;
+  }
+  .header-right button {
+    width: 3rem;
+    height: 2rem;
+    font-size: 0.9rem;
+  }
+}
+:root {
+  --aside-bg: #241634;
+  --aside-text: #e0d7ff;
+  --aside-border: #3a2b54;
+  --aside-hover: #a678f2;
+  --aside-active: #7b4de5;
+  --aside-icon: #c3b3ff;
+  --aside-icon-hover: #dabfff;
+  --aside-link-bg-hover: #37234d;
+}
+
+aside {
+  width: 100%;
+  height: 5rem;
+  background-color: var(--aside-bg);
+  position: absolute; /* Change to fixed if you want it to stay on scroll */
+  top: 10rem; /* Match header's height (default) */
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--aside-hover);
+  z-index: 99; /* Less than header */
+  transition: top 0.3s;
+}
+header.scrolled + aside {
+  top: 80px; /* Match header.scrolled h2 height */
+}
