@@ -1,1 +1,225 @@
-@import "tailwindcss";
+:root {
+  /* ===== Primary Palette ===== */
+  --primary-color: #6a1b9a;
+  --primary-color-light: #9c27b0;
+  --primary-color-dark: #4a148c;
+
+  /* ===== Accent & Backgrounds ===== */
+  --accent-color: #7b1fa2;
+  --background-color: #1e1b29;
+  --white: #ffffff;
+  --black: #000000;
+
+  /* ===== Borders ===== */
+  --border-color: #45224a;
+  --border-dark: #6a1b9a;
+
+  /* ===== Header ===== */
+  --header-bg: #311b3f;
+  --header-text: #ffffff;
+
+  /* ===== Footer ===== */
+  --footer-bg: #24002e;
+  --footer-text: #d1c4e9;
+  --footer-link: #ba68c8;
+  --footer-link-hover: #e1bee7;
+
+  /* ===== Aside / Sidebar ===== */
+  --aside-bg: #2a1a37;
+  --aside-border: #4a148c;
+
+  /* ===== Main Content ===== */
+  --main-bg: #2e223f;
+  --main-text: #f3e5f5;
+
+  /* ===== Headings ===== */
+  --h1-color: #ce93d8;
+  --heading-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+
+  /* ===== Logo ===== */
+  --logo-bg: #7b1fa2;
+  --logo-text: #ffffff;
+  --logo-shadow: 0 2px 6px rgba(156, 39, 176, 0.4);
+
+  /* ===== Text Variants ===== */
+  --text-color: #ede7f6;
+  --text-light: #ffffff;
+  --text-muted: #b39ddb;
+  --text-dark: #4a148c;
+  --text-success: #8e24aa;
+  --text-error: #d32f2f;
+
+  /* ===== Buttons ===== */
+  --btn-bg: var(--primary-color);
+  --btn-bg-hover: var(--primary-color-dark);
+  --btn-text: var(--text-light);
+
+  /* ===== Icons ===== */
+  --icon-color: #ce93d8;
+  --icon-hover: #e1bee7;
+
+  /* ===== Blobs & Shapes ===== */
+  --blob-purple: #7b1fa2;
+  --blob-dark: #4a148c;
+  --shape-bg: #6a1b9a;
+  --shape-accent: #ba68c8;
+
+  /* ===== Waves (SVG section dividers) ===== */
+  --wave-color: #2a1a37;
+  --wave-dark: #4a148c;
+  --wave-accent: #6a1b9a;
+
+  /* ===== Shadows ===== */
+  --box-shadow-light: 0 2px 6px rgba(106, 27, 154, 0.1);
+  --box-shadow: 0 4px 12px rgba(106, 27, 154, 0.3);
+  --box-shadow-strong: 0 6px 20px rgba(74, 20, 140, 0.45);
+
+  /* ===== Scrollbar Colors ===== */
+  --scrollbar-track: #2e223f;
+  --scrollbar-thumb: #6a1b9a;
+  --scrollbar-thumb-hover: #9c27b0;
+  --scrollbar-thumb-active: #4a148c;
+  --scrollbar-border: #7b1fa2;
+
+  /* ===== Header Nav Links ===== */
+  --nav-link-color: #ce93d8;
+  --nav-link-hover: #ffffff;
+  --nav-link-active: #e1bee7;
+  --nav-link-bg-hover: rgba(255, 255, 255, 0.1);
+
+  /* ===== Buttons: Primary ===== */
+  --btn-primary-bg: #6a1b9a;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #7b1fa2;
+  --btn-primary-active: #4a148c;
+  --btn-primary-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
+
+  /* ===== Buttons: Secondary ===== */
+  --btn-secondary-bg: #45224a;
+  --btn-secondary-text: #e1bee7;
+  --btn-secondary-hover: #5e3371;
+  --btn-secondary-active: #311b3f;
+
+  /* ===== Buttons: Outline ===== */
+  --btn-outline-border: #ce93d8;
+  --btn-outline-text: #ce93d8;
+  --btn-outline-hover-bg: rgba(206, 147, 216, 0.1);
+  --btn-outline-hover-border: #e1bee7;
+  --btn-outline-hover-text: #ffffff;
+
+  /* ===== Buttons: Disabled ===== */
+  --btn-disabled-bg: #3d2c4a;
+  --btn-disabled-text: #b39ddb;
+  --btn-disabled-border: #5c3e6a;
+}
+footer {
+  width: 100%;
+  height: 30rem;
+  position: absolute;
+  top: 400%;
+  background-color: var(--footer-bg);
+}
+footer .contact-container {
+  width: 100%;
+  height: 4rem;
+  background-color: var(--btn-outline-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .contact-container .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+  transform: translateY(-1.5rem);
+  margin-right: 5rem;
+}
+footer .contact-container h2 {
+  margin-left: 5rem;
+}
+footer .contact-container .links a svg {
+  width: 2rem;
+}
+footer .container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .company {
+  width: 20%;
+  height: 100%;
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+.company h1 {
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-right: 60px;
+}
+.company p {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+.products1,
+.products2 {
+  width: 15rem;
+}
+.products1 h2,
+.products2 h2 {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+.products2 h2 {
+    margin-bottom: 1rem;
+}
+.products1 ul {
+    margin-top: 1rem;
+}
+.products1 ul li a,
+.products2 ul li a {
+  color: var(--text-color);
+  margin-left: 1rem;
+}
+.contact {
+    width: 20rem;
+    height: 15rem;
+    margin-top: 5rem;
+    margin-right: 3rem;
+}
+.contact h2 {
+    color: var(--text-muted);
+}
+.contact ul {
+    margin-top: 1rem;
+}
+.contact ul li {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.contact ul li span {
+    color: var(--icon-color);
+}
+.contact ul li a {
+    color: var(--text-color);
+    margin-left: 20px;
+}
+.CP {
+    width: 100%;
+    height: 3rem;
+    background-color: var(--background-color);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--text-color);
+}
+.CP h2 a {
+    color: red;
+}
