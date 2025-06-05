@@ -1,59 +1,51 @@
-// components/AnimatedWave.jsx
+// src/components/Wave.jsx
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const AnimatedWave = () => {
-  const waveRef = useRef(null);
+const Wave = () => {
+  const pathRef = useRef(null);
 
   useEffect(() => {
-    const wavePath = waveRef.current;
+    const path = pathRef.current;
 
-    const wave1 = "M0,160 C480,360 960,-40 1440,160 L1440,320 L0,320 Z";
-    const wave2 = "M0,120 C480,-40 960,360 1440,120 L1440,320 L0,320 Z";
-    const wave3 = "M0,200 C480,-80 960,400 1440,200 L1440,320 L0,320 Z";
-    const color1 = "#7c3aed"; // Purple
-    const color2 = "#21c064"; // Green
-    const color3 = "red"; // Red
+    const waveShapes = [
+      "M0,160 C480,280 960,40 1440,160 L1440,320 L0,320 Z", // shape 1
+      "M0,120 C480,40 960,280 1440,120 L1440,320 L0,320 Z", // shape 2
+      "M0,200 C480,80 960,320 1440,200 L1440,320 L0,320 Z", // shape 3
+    ];
 
-    wavePath.setAttribute("d", wave1);
-    wavePath.setAttribute("fill", color1);
+    path.setAttribute("d", waveShapes[0]);
 
-    const animateWave = () => {
-      gsap.to(wavePath, {
-        duration: 2,
-        attr: { d: wave2 },
-        fill: color2,
-        ease: "power1.inOut",
-        onComplete: () => {
-          gsap.to(wavePath, {
-            duration: 2,
-            attr: { d: wave3 },
-            fill: color3,
-            ease: "power1.inOut",
-            onComplete: () => {
-              gsap.to(wavePath, {
-                duration: 2,
-                attr: { d: wave1 },
-                fill: color1,
-                ease: "power1.inOut",
-                onComplete: animateWave,
-              });
-            },
-          });
-        },
-      });
-    };
-
-    animateWave();
+    gsap.to(path, {
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+      attr: {
+        d: waveShapes[1],
+      },
+      onRepeat: () => {
+        const next = waveShapes[Math.floor(Math.random() * waveShapes.length)];
+        gsap.to(path, {
+          duration: 2,
+          attr: { d: next },
+          ease: "power1.inOut",
+        });
+      },
+    });
   }, []);
 
   return (
-    <div className="wave-container">
-      <svg viewBox="0 0 1440 320" className="w-full h-32">
-        <path ref={waveRef} />
-      </svg>
-    </div>
+    <svg
+      id="wave"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      className="wave"
+      style={{ width: "100%" }}
+    >
+      <path ref={pathRef} fill="#7c3aed" d="" />
+    </svg>
   );
 };
 
-export default AnimatedWave;
+export default Wave;
