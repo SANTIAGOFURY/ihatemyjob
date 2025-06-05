@@ -264,7 +264,7 @@ header aside {
   width: 100%;
   flex: none;
   position: absolute;
-  height: 3rem;
+  height: 5rem;
   background-color: var(--aside-bg);
   left: 0;
   top: 100%;

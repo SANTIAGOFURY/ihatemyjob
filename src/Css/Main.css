@@ -17,6 +17,7 @@ section .overlay {
 }
 main {
   height: 100rem;
+
 }
 main section .overlay .wave-container {
   position: relative;
